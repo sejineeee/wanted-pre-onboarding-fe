@@ -1,0 +1,42 @@
+.container {
+  h2 {
+    text-align: center;
+  }
+  form {
+    width: 300px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .email-box {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      label {
+        font-size: 20px;
+        padding-right: 12px;
+      }
+      #user-email {
+        height: 22px;
+      }
+    }
+    .password-box {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      label {
+        font-size: 20px;
+        padding-right: 12px;
+      }
+      #user-password {
+        height: 22px;
+      }
+    }
+    .auth-button {
+      width: 100px;
+      height: 32px;
+      margin: 0 auto;
+    }
+  }
+}
