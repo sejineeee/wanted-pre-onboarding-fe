@@ -15,16 +15,11 @@ const SignUp = () => {
 
   const emailValidation = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const validation = emailValidation.test(form.email) && form.password.length >= 8;
-  
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (!validation) {
-      alert('이메일 형식과 비밀번호가 8자 이상인지 확인해주세요');
-      return;
-    }
+
+  const createUser = async () => {
     try {
       const response = await axios.post('http://localhost:8080/users/create', form);
-      alert(response.data.message)
+      alert(response.data.message);
       return navigate('/auth');
     } catch (error) {
       alert(error.response.data.details);
@@ -32,6 +27,16 @@ const SignUp = () => {
     }
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  
+    if (!validation) {
+      alert('이메일 형식과 비밀번호가 8자 이상인지 확인해주세요');
+      return;
+    }
+
+    createUser();
+  }
 
   return (
     <div className='container'>
