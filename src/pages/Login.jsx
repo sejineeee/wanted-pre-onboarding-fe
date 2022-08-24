@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/form.scss';
 
 const Login = () => {
@@ -21,14 +21,22 @@ const Login = () => {
       return alert('이메일 형식과 비밀번호가 8자리 이상인지 확인해주세요.')
     }
     try {
-      const response = await axios.post('http://localhost:8080/users/login', form);
-      window.localStorage.setItem('login-token', response.data.token)
-      alert(response.data.message);
-      return navigate('/');
+      const response = await axios.post('https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/auth/signin', form);
+      console.log(response);
+      window.localStorage.setItem('login-token', response.data.access_token);
+      navigate('/todo');
     } catch (error) {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    const hasLoginToken = !!window.localStorage.getItem('login-token');
+    if (hasLoginToken) {
+      navigate('/todo')
+    }
+
+  }, [])
 
   return (
     <div className='container'>

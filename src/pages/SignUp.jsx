@@ -18,12 +18,11 @@ const SignUp = () => {
 
   const createUser = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/users/create', form);
-      alert(response.data.message);
-      return navigate('/auth');
+      const response = await axios.post('https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/auth/signup', form);
+      alert('로그인을 해주세요.')
+      navigate('/');
     } catch (error) {
-      alert(error.response.data.details);
-      navigate('/auth');
+      navigate('/sign-up');
     }
   }
 
@@ -43,14 +42,14 @@ const SignUp = () => {
       <h2>Sign up</h2>
       <form onSubmit={onSubmit}>
         <div className='email-box'>
-          <label htmlFor="user-email">이메일</label>
-          <input type="text" id="user-email" onChange={(e) => onChangeForm(e, 'email')} />
+          <label htmlFor='user-email'>이메일</label>
+          <input type='text' id='user-email' onChange={(e) => onChangeForm(e, 'email')} />
         </div>
         <div className='password-box'>
           <label htmlFor='user-password'>비밀번호</label>
-          <input type='password' id="user-password" onChange={(e) => onChangeForm(e, 'password')} />
+          <input type='password' id='user-password' onChange={(e) => onChangeForm(e, 'password')} />
         </div>
-        <button className='auth-button' type="submit" disabled={!validation}>회원가입</button>
+        <button className='auth-button' type='submit' disabled={!validation}>회원가입</button>
       </form>
     </div>
   );
