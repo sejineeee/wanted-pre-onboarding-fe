@@ -69,7 +69,6 @@ const Todo = () => {
   }
 
   const updateTodoItem = async (todo) => {
-    console.log(todo)
     try {
       const response = await axios.put(`https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/todos/${todo.id}`, {
         todo: todo.todo,
