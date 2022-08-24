@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# 원티드 프리온보딩 프론트엔드 사전과제
+## 프로젝트 소개
+---
+원티드 프리온보딩 프론트엔드 코스에 참가하기 위한 사전과제로 Todo List 프로젝트입니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 적용한 라이브러리
+- React
+- React-router-dom
+- Axios
+- Sass
+  - 각 컴포넌트의 스타일을 적용하기 위해서 사용하였습니다.
+- Styled-components
+  - Header에서 간단한 부분을 스타일 적용하기 위해서 사용하였습니다.
+  - 아직 Styled-components를 적용하는데 부족함이 있어, 추후 Sass로 작성한 부분을 Styled-components로 바꿔볼 예정입니다.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## 프로젝트 실행방법
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 데모영상
+---
+### 로그인
+---
+<img src="https://user-images.githubusercontent.com/86041335/186344859-b134c05c-a9d6-4f2d-a213-50221713b7ed.gif">
 
-### `npm test`
+- 회원가입과 로그인의 경우 이메일에 `@` 포함되어야 된다.
+- 비밀번호는 8자 이상이어야 된다.
+- 입력된 이메일과 비밀번호의 조건이 만족할 때만 버튼이 활성화되고, 그 외에는 비활성화 상태이다.
+- API 호출 후, 올바른 응답시에만 `/todo` 경로로 이동한다.
+- 응답받은 JWT를 localStorage에 저장하였다.
+- 토큰이 있는 상태로 `/` 경로에 있는 로그인 페이지에 접속할 경우 `/todo` 경로로 리다이렉트
+- 토큰이 없는 상태로 `/todo` 경로에 접근할 경우 로그인을 할 수 있게 `/`경로로 리다이렉트
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Todo
+---
+<img src="https://user-images.githubusercontent.com/86041335/186347550-f3ad09e4-850d-4645-b26e-3e0973f1b66e.gif">
 
-### `npm run build`
+- `/todo` 경로에 접속하면 todo list의 목록을 볼 수 있어야 된다.
+- 리스트 페이지에는 todo list의 내용과 완료 여부가 표시된다.
+  - 완료 여부는 이모티콘인 ⭕(완료),❌(미완료)로 표시하였다.
+- 입력창과 추가 버튼이 있고, 추가버튼을 누르면 입력창의 내용이 새로운 todo list에 추가
+- 수정 버튼을 누를 경우 추가 버튼이 사라지고 수정과 취소 버튼이 나타난다.
+- todo list의 개별 아이템 우측에 삭제 버튼이 존재한다.
+- 삭제 버튼을 누르면 삭제된다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 프로젝트를 통해 느낀점
+---
+API를 이용해서 프로젝트를 진행해본 것이 처음이었다. HTTP 메서드에 대한 이해와 Axios 사용방법에 대한 이해가 부족하여 프로젝트를 진행하는데 어려움이 있었다. 또한 아직 컴포넌트를 세세하게 분리하는데 익숙하지 않아서 처음에는 `Todo` 파일에 모든 것을 다 작성했었다. 처음에는 그랬으나, `TodoItem, TodoEditor` 이렇게 작성하는 부분과 리스트를 보여주는 부분을 따로 분리해보았다. 이 사전과제 제출을 완료한 이후에도 해당 프로젝트를 리팩토링 해보고 Styled-components로 바꿔보는 작업을 진행해보면 더욱 깔끔하고 일관성 있는 코드가 될 것이라고 생각한다.
