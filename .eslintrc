@@ -1,0 +1,9 @@
+{
+  "extends": ["react-app", "eslint: recommend"],
+  "rules": {
+    "no-var": "error",
+    "no-multiple-empty-lines": "error",
+    "eqeqeq": "error",
+    "no-unused-vars": "error"
+  }
+}
