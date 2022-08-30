@@ -3,7 +3,6 @@
   "singleQuote": true,
   "semi": true,
   "tabWidth": 2,
-  "JsxBracketSameLine": true,
   "trailingComma": "es5",
   "endOfLine": "lf",
   "arrowParens": "always"
